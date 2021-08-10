@@ -12,4 +12,17 @@
  - 사용자의 입력을 처리하느라 웹 앱이 프로세서에 대한 제어 권을 브라우저에게 반환하지 않는 현상입니다.
 
 
+#### Promise/ Future
+ - Future : 미래에 실행이 완료될 것으로 예상되는 객체
+  - 따라서 아직 실행되지 않은 경우나, 실행 중이지만 아직 완료되지 않은 경우를 포함하는 개념임.
+  - Future 객체에 요청한 값이 들어오기를 기다리는 동안 다른 연산을 수행 할 수 있다.
+ 
+ - Promise : 기본적으로 Future와 비슷하지만 Future는 외부에서 완료된 결과가 들어오기만 하므로 read-only, Promise는 강제로 내가 complete할 수 있는 메서드를 제공한다는 점에서 차이가 있다.
+  - 자바에서 Promise == CompletetableFuture
+  - .complete() 라는 메서드를 제공하고 있다.
 
+
+#### Promise/ Future가 왜 필요한가?
+- callback의 단점
+ - callback 실행 결과를 외부로 리턴할 수 없어서 callback결과를 다루려면 callback안에서 해결해야하고, 결국 callback안에 callback... 형시긍로 중첩해서 써내려가야 한다.
+ - 반면 Promise는 실행 결과 프로미스를 리턴해서 다음 then으로 전달 가능하다.
